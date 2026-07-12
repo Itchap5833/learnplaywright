@@ -1,7 +1,7 @@
 import path from 'path'
 import { readCSV } from '../utils/csvReader';
 import { readExcel } from '../utils/excelReader';
-import fs, { readFileSync } from 'fs';
+import fs from 'fs';
 
 export function readData<T = any>(filePath: string, sheetName?: string): T[] {
 

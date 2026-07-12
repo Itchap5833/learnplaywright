@@ -23,6 +23,29 @@ export class CartPageSauceDemo {
     await expect(this.pageTitle).toHaveText('Your Cart');
   }
 
+  getCartItem(productName: string) {
+    return this.cartItems.filter({ has: this.page.getByText(productName) });
+  }
+
+  getRemoveButton(productName: string) {
+    return this.getCartItem(productName).getByRole('button', { name: /remove/i });
+  }
+
+  async removeProduct(productName: string) {
+    await this.getRemoveButton(productName).click();
+  }
+
+  async removeAllProducts(productNames: string[]) {
+    for (const productName of productNames) {
+      await this.removeProduct(productName);
+    }
+  }
+
+  async verifyCartIsEmpty() {
+    await expect(this.cartItems).toHaveCount(0);
+    await expect(this.page.locator('.shopping_cart_badge')).toHaveCount(0);
+  }
+
   async getCartItemNames(): Promise<string[]> {
     return this.cartItems.locator('.inventory_item_name').allTextContents();
   }

@@ -6,6 +6,8 @@ import { CheckoutStepTwoPageSauceDemo } from '../pages/checkout-step-two.page';
 import { CheckoutCompletePageSauceDemo } from '../pages/checkout-complete.page';
 import { readData } from '../utils/dataReaderTyped';
 
+// npm test -- src/tests/inventory.add-all-multipletest.spec.ts --headed --workers=1 --project=chromium
+
 export type InventoryData = {
   productName: string;
   expectedDescription: string;
