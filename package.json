@@ -1,0 +1,44 @@
+{
+  "name": "learnplaywright3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:headed:chrome": "npx playwright test --project=chromium --headed",
+    "test:chrome:google": "PERSISTENT_USER_DIR=./user-data npx playwright test src/tests/google.spec.ts --project=chromium --headed",
+    "test:chrome:saucedemologin": "PERSISTENT_USER_DIR=./user-data npx playwright test src/tests/login.demo.spec.ts --project=chromium --headed && npx playwright show-report --port=0",
+    "test:chrome:saucedemologin1": "PERSISTENT_USER_DIR=./user-data npx playwright test src/tests/login1.demo.spec.ts --project=chromium --headed && npx playwright show-report --port=0",
+    "test:chrome:saucedemologin2": "PERSISTENT_USER_DIR=./user-data npx playwright test src/tests/login2.demo.spec.ts --project=chromium --headed && npx playwright show-report --port=0",
+    "test:chrome:saucedemologin3": "PERSISTENT_USER_DIR=./user-data npx playwright test src/tests/login3.demo.spec.ts --project=chromium --headed && npx playwright show-report --port=0",
+    "test:chrome:saucedemologin4": "PERSISTENT_USER_DIR=./user-data npx playwright test src/tests/login4.csv.demo.spec.ts --project=chromium --headed && npx playwright show-report --port=0",
+    "test:chrome:saucedemologin5": "PERSISTENT_USER_DIR=./user-data npx playwright test src/tests/login5.excel.demo.spec.ts --project=chromium --headed && npx playwright show-report --port=0",
+    "test:chrome:saucedemologin6": "PERSISTENT_USER_DIR=./user-data npx playwright test src/tests/login6.unified.demo.spec.ts --project=chromium --headed && npx playwright show-report --port=0",
+    "test:chrome:saucedemologin7": "PERSISTENT_USER_DIR=./user-data npx playwright test src/tests/login7.browsercontext.demo.spec.ts --project=chromium --headed && npx playwright show-report --port=0",
+    "test:chrome:saucedemologin8": "PERSISTENT_USER_DIR=./user-data npx playwright test src/tests/login8.browsercontext.advanced.spec.ts --project=chromium --headed && npx playwright show-report --port=0",
+
+    "test:chrome:report": "npx playwright test --project=chromium --headed --reporter=list --reporter=html",
+    "record:state": "node ./scripts/record-storage.js",
+    "test:with-state": "cross-env PLAYWRIGHT_STORAGE_STATE=storageState.json npx playwright test --project=chromium --headed",
+    "install:browsers": "npx playwright install",
+    "test:report": "node ./scripts/show-latest-report.js",
+    "test:debug": "npx playwright test --debug",
+    "lint": "npx eslint . --ext .ts,.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.1",
+    "@typescript-eslint/eslint-plugin": "^8.63.0",
+    "@typescript-eslint/parser": "^8.63.0",
+    "eslint": "^10.6.0"
+  },
+  "dependencies": {
+    "csv-parse": "^7.0.1",
+    "xlsx": "^0.18.5"
+  }
+}
