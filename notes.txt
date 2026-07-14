@@ -1,0 +1,25 @@
+Steps to encrypt a password
+Set the secret key:
+
+macOS / Linux:
+export PASSWORD_SECRET_KEY="your-secret-key-here"
+
+Windows PowerShell:
+$env:PASSWORD_SECRET_KEY="your-secret-key-here"
+
+Run the encrypt script:
+npm run encrypt-password -- secret_sauce
+
+
+Copy the output and place it in global-setup.ts under encryptedPasswordMap:
+const encryptedPasswordMap: Record<string, string> = {
+  standard_user: '...encrypted value...',
+  problem_user: '...encrypted value...',
+};
+
+Ensure the same PASSWORD_SECRET_KEY is available when running tests:
+
+PASSWORD_SECRET_KEY must be set during test execution
+Example:
+export PASSWORD_SECRET_KEY="your-secret-key-here"
+npm test

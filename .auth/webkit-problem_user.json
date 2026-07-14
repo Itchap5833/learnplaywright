@@ -2,13 +2,13 @@
   "cookies": [
     {
       "name": "session-username",
-      "value": "standard_user",
+      "value": "problem_user",
       "domain": "www.saucedemo.com",
       "path": "/",
-      "expires": 1783882127,
+      "expires": 1784054088,
       "httpOnly": false,
       "secure": false,
-      "sameSite": "Lax"
+      "sameSite": "None"
     }
   ],
   "origins": [
@@ -17,11 +17,11 @@
       "localStorage": [
         {
           "name": "backtrace-guid",
-          "value": "0a8cab21-8c83-489a-a5aa-292b418ba793"
+          "value": "a706382d-bdca-45f1-a662-86a95af4640d"
         },
         {
           "name": "backtrace-last-active",
-          "value": "1783881527138"
+          "value": "1784053487927"
         }
       ]
     }

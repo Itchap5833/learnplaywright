@@ -24,6 +24,7 @@
     "install:browsers": "npx playwright install",
     "test:report": "node ./scripts/show-latest-report.js",
     "test:debug": "npx playwright test --debug",
+    "encrypt-password": "node ./scripts/encrypt-password.js",
     "lint": "npx eslint . --ext .ts,.js"
   },
   "keywords": [],

@@ -48,18 +48,21 @@ export default defineConfig({
       use: {
         ...devices['Desktop Chrome'],
         channel: 'chrome',
+        storageState: path.join(__dirname, '.auth', 'chromium-standard_user.json'),
       },
     },
     {
       name: 'firefox',
       use: {
         ...devices['Desktop Firefox'],
+        storageState: path.join(__dirname, '.auth', 'firefox-standard_user.json'),
       },
     },
     {
       name: 'webkit',
       use: {
         ...devices['Desktop Safari'],
+        storageState: path.join(__dirname, '.auth', 'webkit-standard_user.json'),
       },
     },
 
